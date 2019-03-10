@@ -5,7 +5,7 @@ from discord.ext import commands
 from discord.utils import get
 import asyncio
 BOT_PREFIX = ("?", "!")
-TOKEN="NTU0MjcwMjE5NzQ1NjI0MDY5.D2aRkA.5XkZIG3QGWNJDUTfF0vdnG5FSpc"
+TOKEN="Your own Token"
 
 client= Bot(command_prefix=BOT_PREFIX)
 
@@ -89,7 +89,13 @@ async def copy_roles(ctx):
     print(src.id)
     print(src.roles)
     """
-
+"""
+#will add user to default role. 
+@client.event
+asyc def on_member_join(member):
+    role= discord.utils.get(member.server.roles,name='new role')
+    await client.add_roles(member,role)
+"""
 
 
 client.run(TOKEN)
